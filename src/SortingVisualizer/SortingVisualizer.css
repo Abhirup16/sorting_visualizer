@@ -1,0 +1,13 @@
+.container 
+{
+    position : absolute;
+    left : 100px;
+    right: 100px;
+}
+.bars
+{
+    width : 2px;
+    background-color: turquoise;
+    display : inline-block;
+    margin : 0 1px;
+}
