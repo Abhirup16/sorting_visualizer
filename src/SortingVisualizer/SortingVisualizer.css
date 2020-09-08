@@ -1,13 +1,11 @@
-.container 
-{
-    position : absolute;
-    left : 100px;
-    right: 100px;
+.container {
+  position: absolute;
+  left: 100px;
+  top: 30px;
 }
-.bars
-{
-    width : 2px;
-    background-color: turquoise;
-    display : inline-block;
-    margin : 0 1px;
+
+.bars {
+  width: 2px;
+  display: inline-block;
+  margin: 0 1px;
 }
