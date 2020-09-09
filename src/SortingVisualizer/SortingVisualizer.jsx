@@ -6,7 +6,7 @@ import {
   bubblesort,
   insertionSort,
   heapSort,
-} from '../sortingAlgorithms/sortingAlgorithms.js';
+} from '../SortingAlgorithms/SortingAlgorithms.js';
 const primary_color = 'turquoise';
 const secondary_color = 'tomato';
 export default class SortingVisualizer extends React.Component {
@@ -92,7 +92,7 @@ export default class SortingVisualizer extends React.Component {
         setTimeout(() => {
           bar1style.backgroundColor = color;
           bar2style.backgroundColor = color;
-        }, i * 3);
+        }, i * 5);
       } else {
         const [bar1, newheight1, bar2, newheight2] = animations[i];
         setTimeout(() => {
@@ -100,7 +100,7 @@ export default class SortingVisualizer extends React.Component {
           const bar2styles = arraybars[bar2].style;
           bar1styles.height = `${newheight1}px`;
           bar2styles.height = `${newheight2}px`;
-        }, i * 3);
+        }, i * 5);
       }
     }
   }
@@ -118,7 +118,7 @@ export default class SortingVisualizer extends React.Component {
           let t = bar1style.height;
           bar1style.height = bar2style.height;
           bar2style.height = t;
-        }, i * 5);
+        }, i * 10);
       } else {
         const [bar1, bar2] = animations[i];
         const bar1style = arraybars[bar1].style;
@@ -126,7 +126,7 @@ export default class SortingVisualizer extends React.Component {
         setTimeout(() => {
           bar1style.backgroundColor = primary_color;
           bar2style.backgroundColor = primary_color;
-        }, i * 5);
+        }, i * 10);
       }
     }
   }
