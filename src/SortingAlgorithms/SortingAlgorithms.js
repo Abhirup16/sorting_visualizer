@@ -92,7 +92,7 @@ export function insertionSort(array) {
 
 export function heapSort(array) {
   const animations = [];
-  for (let i = Math.floor(array.length / 2) - 1; i >= 0; i--)
+  for (let i = Math.floor(array.length / 2) ; i >= 0; i--)
     maxheapify(array, animations, array.length, i);
   for (let i = array.length - 1; i > 0; i--) {
     animations.push([0, i]);
