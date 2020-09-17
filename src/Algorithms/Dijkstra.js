@@ -1,3 +1,5 @@
+import { queryHelpers } from "@testing-library/react";
+
 export function dijkstra(grid, startNode, finishNode) {
     const visitedNodesInOrder = [];
     startNode.distance = 0;
@@ -61,3 +63,28 @@ export function dijkstra(grid, startNode, finishNode) {
     return nodesInShortestPathOrder;
   }
   
+
+  
+  export function dfs(grid,startNode,finishNode)
+  {
+    const visitedNodesInOrder = [];
+    dfsHelper(grid,startNode,finishNode,visitedNodesInOrder);
+    return visitedNodesInOrder;
+  }
+
+  function dfsHelper(grid,startNode,finishNode,visitedNodesInOrder)
+  {
+    const adjNodes = getUnvisitedNeighbors(startNode, grid);
+    while (!!adjNodes.length)
+    {
+       const closestNode = adjNodes.shift();
+       if(closestNode.isWall) continue;
+       if(finishNode.isVisited)
+          return;
+       visitedNodesInOrder.push(closestNode);
+       closestNode.isVisited = true;
+       if(closestNode === finishNode) return;
+       updateUnvisitedNeighbors(closestNode, grid);
+       dfsHelper(grid,closestNode,finishNode,visitedNodesInOrder);
+    }
+  }

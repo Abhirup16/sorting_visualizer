@@ -1,11 +1,11 @@
 .container {
   position: absolute;
-  left: 100px;
+  left: 150px;
   top: 70px;
 }
 
 .bars {
-  width: 2px;
+  width: 10px;
   display: inline-block;
   margin: 0 1px;
 }

@@ -22,7 +22,7 @@ export default class SortingVisualizer extends React.Component {
   }
   resetArray() {
     const array = [];
-    for (let i = 0; i < 320; i++) {
+    for (let i = 0; i < 100; i++) {
       array.push(getRandomArbitrary(5, 610));
     }
     this.setState({array});
@@ -41,13 +41,13 @@ export default class SortingVisualizer extends React.Component {
         setTimeout(() => {
           bar1style.backgroundColor = color;
           bar2style.backgroundColor = color;
-        }, i * 5);
+        }, i * 10);
       } else {
         const [bar1, newheight] = animations[i];
         setTimeout(() => {
           const bar1styles = arraybars[bar1].style;
           bar1styles.height = `${newheight}px`;
-        }, i * 5);
+        }, i * 10);
       }
     }
   }
@@ -66,7 +66,7 @@ export default class SortingVisualizer extends React.Component {
           let t = bar1style.height;
           bar1style.height = bar2style.height;
           bar2style.height = t;
-        }, i * 5);
+        }, i * 10);
       } else {
         const [bar1, bar2] = animations[i];
         const bar1style = arraybars[bar1].style;
@@ -74,7 +74,7 @@ export default class SortingVisualizer extends React.Component {
         setTimeout(() => {
           bar1style.backgroundColor = primary_color;
           bar2style.backgroundColor = primary_color;
-        }, i * 5);
+        }, i * 10);
       }
     }
   }
@@ -92,15 +92,15 @@ export default class SortingVisualizer extends React.Component {
         setTimeout(() => {
           bar1style.backgroundColor = color;
           bar2style.backgroundColor = color;
-        }, i * 5);
+        }, i * 20);
       } else {
         const [bar1, newheight1, bar2, newheight2] = animations[i];
-        setTimeout(() => {
+        setTimeout(( ) => {
           const bar1styles = arraybars[bar1].style;
           const bar2styles = arraybars[bar2].style;
           bar1styles.height = `${newheight1}px`;
           bar2styles.height = `${newheight2}px`;
-        }, i * 5);
+        }, i * 20);
       }
     }
   }

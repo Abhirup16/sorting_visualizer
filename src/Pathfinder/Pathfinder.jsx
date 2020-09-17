@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Node from './Node/Node';
-import {dijkstra, getNodesInShortestPathOrder} from '../Algorithms/Dijkstra';
+import {dijkstra, getNodesInShortestPathOrder, dfs} from '../Algorithms/Dijkstra';
 
 import './PathfindingVisualizer.css';
 
@@ -73,6 +73,16 @@ export default class PathfindingVisualizer extends Component {
     this.animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
   }
 
+  visualizedfs()
+  {
+    const {grid} = this.state;
+    const startNode = grid[START_NODE_ROW][START_NODE_COL];
+    const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
+    const visitedNodesInOrder = dfs(grid, startNode, finishNode);
+    const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
+    this.animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
+  }
+
   render() {
     const {grid, mouseIsPressed} = this.state;
 
@@ -81,6 +91,7 @@ export default class PathfindingVisualizer extends Component {
         <button onClick={() => this.visualizeDijkstra()}>
           Visualize Dijkstra's Algorithm
         </button>
+        <button onClick={() => this.visualizedfs()}>Visualize DFS </button>
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (
